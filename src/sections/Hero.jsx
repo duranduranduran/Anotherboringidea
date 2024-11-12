@@ -4,13 +4,19 @@ import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader.jsx";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js";
-import Bunny from "../components/Bunny.jsx";
 import Neon from "../../Neon.jsx";
-import OpenSign from "../components/OpenSign.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
-import HackerRoom from "../components/HackerRoom.jsx";
 import Button from "../components/Button.jsx";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
+
+const modelUrl = '/models/neon/neon_signs.glb';
+
+const Model = () => {
+    const gltf = useLoader(GLTFLoader, modelUrl);
+    // Use the loaded model in your scene
+    return <mesh ref={gltf.scene} />;
+};
 const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 480 });
     const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -76,7 +82,7 @@ const Hero = () => {
                         </group>
                         <ambientLight intensity={0.8}/>
                         <directionalLight position={[10, 10, 10]} intensity={0.2}/>
-                        <OrbitControls enableZoom={false} enablePan={true} enableRotate={true} enableDamping={true}/>
+                        {/*<OrbitControls enableZoom={false} enablePan={true} enableRotate={true} enableDamping={true}/>*/}
                     </Suspense>
                 </Canvas>
             </div>
