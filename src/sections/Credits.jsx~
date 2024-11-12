@@ -1,0 +1,96 @@
+import React, {Suspense} from 'react'
+import {Canvas} from "@react-three/fiber";
+import CanvasLoader from "../components/CanvasLoader.jsx";
+import {OrbitControls, PerspectiveCamera} from "@react-three/drei";
+import HeroCamera from "../components/HeroCamera.jsx";
+import Neon from "../../Neon.jsx";
+import OpenSign from "../components/OpenSign.jsx";
+
+const Credits = () => {
+    return (
+
+
+            <div className="max-w-screen-md mx-auto p-4 md:p-6 lg:p-8 text-white mt-20">
+                <Canvas className="w-full h-full">
+                    <Suspense fallback={<CanvasLoader/>}>
+                        <PerspectiveCamera makeDefault={true} position={[0, 0, 20]}/>
+                        <HeroCamera>
+
+
+
+                            <OpenSign scale={0.07}
+                                      position={[0,-10,-20]}
+                                      rotation={[0, Math.PI /3, 0]}/>
+
+
+                        </HeroCamera>
+
+
+                        <group >
+
+
+
+                        </group>
+
+                        <ambientLight intensity={0.8}/>
+                        <directionalLight position={[10, 10, 10]} intensity={0.2}/>
+
+
+                        <OrbitControls enableZoom={false} enablePan={true} enableRotate={true} enableDamping={true}/>
+
+
+                    </Suspense>
+                </Canvas>
+                <div className="text-justify mb-12 mt-20">
+                    <p className="text-lg leading-relaxed mb-4">Welcome to Another Boring Idea—where creativity
+                        defies convention. We are not just a digital agency; we are a vibrant collective of digital
+                        artists, web designers, and branding specialists passionate about transforming the mundane
+                        into the extraordinary.</p>
+                    <p className="text-lg leading-relaxed mb-4">We believe in the power of innovative thinking and artistic expression.
+                        Our team brings together diverse talents to craft unique,
+                        compelling digital experiences that resonate with your audience.
+                        From stunning visuals to seamless web design and impactful branding strategies,
+                        we are dedicated to helping your brand stand out in a crowded marketplace.</p>
+                    <p className="text-lg leading-relaxed mb-4">We don't settle for ordinary. Our team continuously explores
+                        new ideas and techniques to keep your brand fresh and relevant.</p>
+
+                </div>
+
+    <div><h1 className="text-2xl font-bold mb-4">Credits</h1></div>
+
+                <div className="credits-lists flex flex-col space-y-4">
+                    <div className="credits-list">
+                        <h5 className="text-sm font-bold uppercase mb-2">Cast</h5>
+                        <ul className="list-none mb-0">
+                            <li className="text-sm leading-tight mb-1">John Doe</li>
+                            <li className="text-sm leading-tight mb-1">Jane Doe</li>
+                            <li className="text-sm leading-tight mb-1">Bob Smith</li>
+                        </ul>
+                    </div>
+                    <div className="credits-list">
+                        <h5 className="text-sm font-bold uppercase mb-2">Crew</h5>
+                        <ul className="list-none mb-0">
+                            <li className="text-sm leading-tight mb-1">Front-end Development: Jaime Andres Navarrete</li>
+                            <li className="text-sm leading-tight mb-1">Producer: John Doe</li>
+                            <li className="text-sm leading-tight mb-1">Cinematographer: Bob Johnson</li>
+                        </ul>
+                    </div>
+                    <div className="credits-list">
+                        <h5 className="text-sm font-bold uppercase mb-2">Music</h5>
+                        <ul className="list-none mb-0">
+                            <li className="text-sm leading-tight mb-1">Composer: John Williams</li>
+                            <li className="text-sm leading-tight mb-1">Performer: The London Symphony Orchestra</li>
+                        </ul>
+                    </div>
+                    <div className="credits-list">
+                        <h5 className="text-sm font-bold uppercase mb-2">Special Thanks</h5>
+                        <ul className="list-none mb-0">
+                            <li className="text-sm leading-tight mb-1">The City of New York</li>
+                            <li className="text-sm leading-tight mb-1">The State of California</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            )
+            }
+            export default Credits

@@ -39,10 +39,6 @@ body {
         margin-left: -50vw; /* offset the margin to the left by half of the viewport width */
         transform: translateX(0);
     }
-
-    .marquee span {
-        padding: 0 10px; /* add some padding to the text to avoid cutting off */
-    }
     .marquee div {
         width: 200vw; /* make the inner container wider than the screen */
         animation: marquee 5s linear infinite; /* reduce the duration from 10s to 5s */

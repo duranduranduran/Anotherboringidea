@@ -14,15 +14,14 @@ const OpenSign = (props) => {
     const groupRef = useRef()
     const { nodes, materials } = useGLTF('/models/neon_open_sign.glb')
 
-    useEffect(() => {
-        gsap.to(groupRef.current.rotation, {
-            duration: 5,
-            y: 1* Math.PI,
-            ease: 'linear',
-
-            repeat: -1
-        })
-    }, [])
+    // useEffect(() => {
+    //     gsap.to(groupRef.current.rotation, {
+    //         duration: 5,
+    //         y: 2 * Math.PI,
+    //         ease: 'linear',
+    //         repeat: -1
+    //     })
+    // }, [])
 
     return (
         <group ref={groupRef} {...props} dispose={null}>

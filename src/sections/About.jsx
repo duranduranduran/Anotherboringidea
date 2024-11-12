@@ -93,7 +93,7 @@ const About = () => {
                     <div className="grid-container">
                         <Canvas>
                             <Bunny
-                                position={[0, -2, 0.4]} scale={2}/>
+                                position={[0, -2, 0.4]} scale={1.5}/>
                             <ambientLight intensity={0.8}/>
                             <directionalLight position={[10, 10, 10]} intensity={0.2}/>
 
