@@ -11,7 +11,7 @@ const PreLoader = () => {
             <div className="texts-container">
                 <span>Another</span>
                 <span>Boring</span>
-                <span>Idea</span>
+                <span>Idea &reg;</span>
 
             </div>
         </div>

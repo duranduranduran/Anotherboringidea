@@ -7,7 +7,7 @@ import { calculateSizes } from "../constants/index.js";
 import HeroCamera from "../components/HeroCamera.jsx";
 import Button from "../components/Button.jsx";
 import OpenSign from "../components/OpenSign.jsx";
-import Neon from "../../Neon.jsx";
+import RotatingBadge from "../components/RotatingBadge.jsx";
 
 
 
@@ -45,10 +45,11 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="min-h-screen w-full flex flex-col relative " id="home">
+        <section className="min-h-screen w-full flex flex-col relative overflow-x-hidden" id="home">
             <div className=" mx-auto flex md:flex-row flex-col flex-1 justify-center items-center gap-10">
                 <div className={` w-full h-screen  ${isMobile ? ' max-h-80' : ''} `}>
-                    <Canvas className={`w-full h-full object-cover ${isMobile ? '' : ''}`}>
+                    <Canvas
+                        className={`w-full h-full object-cover ${isMobile ? 'max-h-screen' : ''} ${isMobile ? 'overflow-hidden' : ''}`}>
                         <Suspense fallback={<CanvasLoader/>}>
                             <PerspectiveCamera makeDefault={false} position={[0, 0, 20]}/>
                             <HeroCamera isMobile={isMobile}>
@@ -71,23 +72,24 @@ const Hero = () => {
                         </Suspense>
                     </Canvas>
                 </div>
-                <div className="w-full h-full flex flex-col  text text-right mr-6">
+                <div className={`w-full h-full flex flex-col text-right ${isMobile ? 'mr-2' : 'mr-6'}`}>
 
 
                     <h1 ref={heroTagRef} className="text-2xl md:text-7xl font-Unbounded text-gray_gradient">
                         Building Websites And Digital Experiences
                     </h1>
-                    <h1 className="text-4xl md:text-5xl font-medium text-black font-Unbounded">
+                    <h1 className="text-4xl md:text-5xl  font-medium text-black font-Unbounded">
                         Branding And Web Development
                     </h1>
                 </div>
             </div>
             <div className="left-0 right-0 w-full z-10 flex justify-center mt-10">
                 <a href="#contact" className="w-fit">
-                <Button name="Contact :)" isBeam containerClass="w-fit md:w-96">
+                    <Button name="Contact :)" isBeam containerClass="w-fit md:w-96">
                     </Button>
                 </a>
             </div>
+
         </section>
     );
 

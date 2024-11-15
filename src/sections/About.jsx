@@ -8,6 +8,7 @@ import HackerRoom from "../components/HackerRoom.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
 import { OrbitControls} from "@react-three/drei";
 import {useMediaQuery} from "react-responsive";
+import RotatingBadge from "../components/RotatingBadge.jsx";
 
 
 const About = () => {
@@ -20,7 +21,7 @@ const About = () => {
 
         setTimeout(() => {
             setHasCopied(false);
-        }, 2000);
+        }, 10000);
     };
 
     return (
@@ -147,17 +148,15 @@ const About = () => {
 
                 <div className="xl:col-span-1 xl:row-span-2">
                     <div className="grid-container">
-                        <img
-                            src="assets/grid4.png"
-                            alt="grid-4"
-                            className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
-                        />
+                        <div className="flex justify-center items-center">
+                            <RotatingBadge/>
+                        </div>
 
                         <div className="space-y-2">
                             <p className="grid-subtext text-center">Contact me</p>
                             <div className="copy-container" onClick={handleCopy}>
-                                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                                <p className="lg:text-1.5xl md:text-xl font-medium text-gray_gradient text-white">hello@anotherboringidea.com</p>
+                                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy"/>
+                                <p className="lg:text-1.5xl md:text-xl font-medium text-gray_gradient text-black">hello@anotherboringidea.com</p>
                             </div>
                         </div>
                     </div>

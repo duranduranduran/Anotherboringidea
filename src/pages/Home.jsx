@@ -12,6 +12,7 @@ function Home() {
         <div >
             <Navbar />
             <Hero />
+
             <About />
             <Marquee />
             <Footer/>

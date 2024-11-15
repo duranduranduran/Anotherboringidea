@@ -4,7 +4,6 @@ import Hero from "../sections/Hero.jsx";
 import About from "../sections/About.jsx";
 import Marquee from "../sections/Marquee.jsx";
 import Footer from "../sections/Footer.jsx";
-import ThemeToggleButton from "../components/ThemeToggleButton.jsx";
 
 function Home() {
 
@@ -13,10 +12,10 @@ function Home() {
         <div >
             <Navbar />
             <Hero />
+            
             <About />
             <Marquee />
             <Footer/>
-            <ThemeToggleButton/>
         </div>
     );
 }
