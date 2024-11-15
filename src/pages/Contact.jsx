@@ -1,12 +1,15 @@
 import React from 'react'
 import Navbar from "../sections/Navbar.jsx";
-import Hero from "../sections/Hero.jsx";
-
+import ContactForm from "../sections/ContactForm.jsx";
+import Footer from "../sections/Footer.jsx";
+import RotatingBadge from "../components/RotatingBadge.jsx";
 const Contact = () => {
     return (
         <main className=" max-w-7xl mx-auto">
             <Navbar/>
-            <Hero/>
+            <ContactForm  />
+            <RotatingBadge/>
+            <Footer/>
 
         </main>)
 }

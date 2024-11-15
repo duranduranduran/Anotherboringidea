@@ -17,9 +17,10 @@ const OpenSign = (props) => {
     useEffect(() => {
         gsap.to(groupRef.current.rotation, {
             duration: 5,
-            y: 2 * Math.PI,
+            y: 3 * Math.PI,
             ease: 'linear',
-            repeat: -1
+            repeat: -1,
+            yoyo: true
         })
     }, [])
 

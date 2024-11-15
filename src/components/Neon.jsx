@@ -1,9 +1,10 @@
 
 import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
 import gsap from "gsap";
 import { useGSAP} from "@gsap/react"
+import { useGLTF } from '@react-three/drei';
 
+useGLTF.preload('/models/neon/neon_signs.glb');
 
 const Neon = (props) => {
     const targetRef = useRef();

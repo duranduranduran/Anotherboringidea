@@ -22,8 +22,8 @@ const Neon = (props) => {
         <group ref={targetRef} {...props} dispose={null}>
             <group rotation={[-Math.PI / 2, 0, 0]}>
                 <mesh
-                    castShadow
-                    receiveShadow
+                    castShadow={true}
+                    receiveShadow={true}
                     geometry={nodes.Object_2.geometry}
                     material={materials.material}
                     emissive={[0.8, 0.8, 0.8]}

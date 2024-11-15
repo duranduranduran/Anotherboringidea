@@ -41,13 +41,16 @@ const Showcase = () => {
         },
     ];
 
+
+
+
     return (
         <section className="max-w-screen-md mx-auto p-4 md:p-6 lg:p-8 text-white mt-20">
-            <h2 className="text-3xl font-bold mb-4">Showcase</h2>
+            <p className="hero_tag text-white top-3 py-5 ">Work</p>
             {showcases.map((showcase, index) => (
                 <div key={index} className="mb-12">
                     <div className="bg-black-200 rounded-lg shadow-md p-4">
-                        <h3 className="text-3xl font-bold mb-2">{showcase.title}</h3>
+                        <h4 className="text-3xl font-bold mb-2">{showcase.title}</h4>
                         <iframe
                             className="w-full h-96 md:h-128 lg:h-160"
                             src={showcase.video}
@@ -55,10 +58,10 @@ const Showcase = () => {
                             allowFullScreen
                         />
                         <div className="mt-4">
-                            <h4 className="text-2xl font-bold mb-2">Credits</h4>
+                            <h5 className="text-sm font-bold uppercase mb-2">Credits</h5>
                             <ul>
                                 {showcase.credits.map((credit, index) => (
-                                    <li key={index} className="text-lg mb-1">
+                                    <li key={index} className="text-sm leading-tight mb-1">
                                         <span className="font-bold">{credit.name}</span>: {credit.text}
                                     </li>
                                 ))}

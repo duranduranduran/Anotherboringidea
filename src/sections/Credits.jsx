@@ -10,7 +10,7 @@ const Credits = () => {
     return (
 
 
-            <div className="max-w-screen-md mx-auto p-4 md:p-6 lg:p-8 text-white mt-20">
+            <div className="max-w-screen-md mx-auto p-4 md:p-6 lg:p-8 text-black mt-20">
                 <Canvas className="w-full h-full">
                     <Suspense fallback={<CanvasLoader/>}>
                         <PerspectiveCamera makeDefault={true} position={[0, 0, 20]}/>
