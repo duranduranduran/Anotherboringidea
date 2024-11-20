@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="container mx-auto w-full text-center">
                 <p>&copy; 2024 AnotherBoringIdea</p>
                 <p className="py-2 text-center"> +593 968899687</p>
-                <p><spam className="waving-hand">👋</spam> hello@anotherboringidea.com</p>
+                <p><spam className="waving-hand">👋</spam><a href="mailto:hello@anotherboringidea.com">hello@anotherboringidea.com</a> </p>
                 <p>❤</p>
             </div>
         </footer>

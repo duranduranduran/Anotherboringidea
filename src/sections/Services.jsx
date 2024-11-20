@@ -1,0 +1,17 @@
+// Services.jsx
+import React from 'react';
+
+const Services = () => {
+    return (
+        <div className="relative group ">
+            <button className="bg-white border-none py-2 px-4 text-lg font-bold cursor-pointer">
+                Service 1
+            </button>
+            <div className="absolute top-full left-0 bg-white  p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p>This is the collapsible body of text.</p>
+            </div>
+        </div>
+    );
+};
+
+export default Services;

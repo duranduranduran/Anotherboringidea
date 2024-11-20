@@ -21,6 +21,12 @@ export const navLinks = [
     },
 ];
 
+export const marqueeText = ' 🌍 hello@anotherboringidea.com';
+
+
+
+
+
 export const clientReviews = [
     {
         id: 1,

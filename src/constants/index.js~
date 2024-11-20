@@ -7,7 +7,7 @@ export const navLinks = [
     {
         id: 2,
         name: 'About',
-        href: '#about',
+        href: 'About',
     },
     {
         id: 3,
@@ -17,9 +17,15 @@ export const navLinks = [
     {
         id: 4,
         name: 'Contact',
-        href: '#contact',
+        href: 'Contact',
     },
 ];
+
+export const marqueeText = 'Open For Business 24/7 🌍';
+
+
+
+
 
 export const clientReviews = [
     {

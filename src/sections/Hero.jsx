@@ -7,8 +7,7 @@ import { calculateSizes } from "../constants/index.js";
 import HeroCamera from "../components/HeroCamera.jsx";
 import Button from "../components/Button.jsx";
 import OpenSign from "../components/OpenSign.jsx";
-import RotatingBadge from "../components/RotatingBadge.jsx";
-
+import VideoGallery from "./VideoGallery.jsx";
 
 
 
@@ -23,6 +22,9 @@ const Hero = () => {
         const text = heroTagRef.current;
         const letters = text.textContent.split('');
         text.innerHTML = '';
+
+
+
 
         const animate = () => {
             letters.forEach((letter, index) => {
@@ -39,7 +41,7 @@ const Hero = () => {
             setTimeout(() => {
                 text.innerHTML = '';
                 animate();
-            }, letters.length * 50 + 1000); // wait for all letters to animate and add a 1s delay
+            }, letters.length * 50 + 2000); // wait for all the letters to animate and add delay
         };
         animate();
     }, []);
@@ -72,22 +74,22 @@ const Hero = () => {
                         </Suspense>
                     </Canvas>
                 </div>
-                <div className={`w-full h-full flex flex-col text-right ${isMobile ? 'mr-2' : 'mr-6'}`}>
+                <div className={`p-4 w-full h-full flex flex-col text-right ${isMobile ? 'mr-2' : 'mr-6'}`}>
 
 
-                    <h1 ref={heroTagRef} className="text-2xl md:text-7xl font-Unbounded text-gray_gradient">
-                        Building Websites And Digital Experiences
+                    <h1 ref={heroTagRef}
+                        className={`text-7xl ${isMobile ? 'text-5xl' : ''}  font-Unbounded text-gray_gradient`}>
+                        Elevate your brand's digital presence 👁
                     </h1>
-                    <h1 className="text-4xl md:text-5xl  font-medium text-black font-Unbounded">
-                        Branding And Web Development
+                    <h1 className={`text-4xl ${isMobile ? 'text-xl' : ''} mt-14 font-Unbounded text-gray_gradient`}>
+                        Your partner in innovative marketing, standout branding, and seamless e-commerce solutions.
                     </h1>
+                    <div className="left-0 right-0 w-full  z-10 flex justify-center mt-10">
+                        <Button name="Contact Us :)" containerClass="w-fit md:w-96 mr-8"/>
+
+                    </div>
+
                 </div>
-            </div>
-            <div className="left-0 right-0 w-full z-10 flex justify-center mt-10">
-                <a href="#contact" className="w-fit">
-                    <Button name="Contact :)" isBeam containerClass="w-fit md:w-96">
-                    </Button>
-                </a>
             </div>
 
         </section>

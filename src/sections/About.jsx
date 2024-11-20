@@ -1,44 +1,108 @@
-import React, { useState } from 'react';
-import Globe from 'react-globe.gl';
-
-import Button from '../components/Button.jsx';
+import React from 'react';
+import Button from "../components/Button.jsx";
 import {Canvas} from "@react-three/fiber";
-import OpenSign from "../components/OpenSign.jsx";
-import HackerRoom from "../components/HackerRoom.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
-import { OrbitControls} from "@react-three/drei";
-import {useMediaQuery} from "react-responsive";
-import RotatingBadge from "../components/RotatingBadge.jsx";
+import HackerRoom from "../components/HackerRoom.jsx";
+import {PerspectiveCamera} from "@react-three/drei";
+
+function About() {
 
 
-const About = () => {
-    const [hasCopied, setHasCopied] = useState(false);
-    const isMobile = useMediaQuery({ maxWidth: 768 });
 
-    const handleCopy = () => {
-        navigator.clipboard.writeText(' hello@anotherboringidea.com');
-        setHasCopied(true);
-
-        setTimeout(() => {
-            setHasCopied(false);
-        }, 10000);
-    };
 
     return (
-        <section className="c-space my-20" id="about">
-            <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+        <div className="flex flex-col gap-5 c-space">
+            <div
+                className="w-full h-full md:h-1/3  rounded-md hover:text-white hover:bg-black transition duration-300 p-4 group mb-3 md:mb-0">
+                <h2 className="text-7xl text-center font-bold text-black mb-4 group-hover:text-white">A safe place for
+                    your <spam className="waving-hand">Ideas</spam></h2>
+
+            </div>
+            <div className="flex flex-col gap-5 c-space md:flex-row">
+                <div
+                    className="w-full md:w-1/2 border-black border-4 rounded-md p-14 flex justify-center items-center md:p-10">
+                    <div className="max-w-md mx-auto text-center">
+                        <h2 className="text-4xl font-bold text-black mb-4">Who We Are</h2>
+                        <p className="text-lg text-black mb-6">
+                            Digital Product Design is a set of tools used to solve communicative and functional
+                            challenges, from capturing attention to clearly conveying value.
+                        </p>
+                        <p className="text-lg text-black mb-6">
+                            We believe in the power of creativity to make a difference. Whether it's a captivating
+                            website,
+                            a striking logo, or a comprehensive branding strategy,
+                            we are committed to delivering exceptional
+                            results that align with your vision.
+                        </p>
+                        <p className="text-lg text-black mb-6">
+                            Let’s create something remarkable together.
+                        </p>
+                        <Button name={'Our Services '}/>
+                    </div>
+                </div>
+                <div className="w-full md:flex-1 flex flex-col justify-between gap-3 md:flex-col">
+                    <div className="h-full md:h-1/3 border-black border-4  rounded-md hover:text-white hover:bg-black transition duration-300 p-4 group mb-3 md:mb-0">
+                        <h2 className="text-4xl font-bold text-black mb-4 group-hover:text-white">Digital Artists</h2>
+                        <p className="text-lg black-600 mb-6">
+                            Our artists bring imagination to life with stunning visuals and creative content that
+                            captivate and inspire.
+                        </p>
+                        <Button name={'Contact Us'}/>
+                    </div>
+                    <div
+                        className="h-full md:h-1/3 border-black border-4  rounded-md hover:text-white hover:bg-black transition duration-300 p-4 group mb-3 md:mb-0">
+                        <h2 className="text-4xl font-bold text-black mb-4 group-hover:text-white">Web Designers</h2>
+                        <p className="text-lg black-600 mb-6">
+                            Our web designers craft user-friendly, aesthetically pleasing, and functional websites
+                            tailored to your unique needs.
+                        </p>
+                        <Button name={'Contact Us'}/>
+
+                    </div>
+                    <div
+                        className="h-full md:h-1/3 border-black border-4  rounded-md hover:text-white hover:bg-black transition duration-300 p-4 group mb-3 md:mb-0">
+                        <h2 className="text-4xl font-bold text-black mb-4 group-hover:text-white">Branding </h2>
+                        <p className="text-lg black-600 mb-6">
+                            Our branding experts shape your brand's identity, ensuring it stands out and resonates with
+                            your target audience.
+                        </p>
+                        <Button name={'Contact Us'} />
+
+                    </div>
+                </div>
+            </div>
+
+            {/*Section2*/}
+
+            <div
+                className=" h-full md:h-1/3  rounded-md hover:text-white hover:bg-black transition duration-300 p-4 group mb-3 md:mb-0">
+                <h2 className="text-7xl c-space  font-bold text-black mb-4 group-hover:text-white">
+                     Work</h2>
+
+            </div>
+
+
+            <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full c-space">
                 <div className="col-span-1 xl:row-span-3">
                     <div className="grid-container">
                         <Canvas>
-                            <OpenSign
-                                scale={0.005}/>
+                            <PerspectiveCamera makeDefault position={[0, 0, -10]}/>
+
+                            <HeroCamera>
+                                <HackerRoom position={[1, -10, -40]} scale={0.4} rotation={[0.3, -Math.PI, 0]}/>
+                            </HeroCamera>
+
+
                             <ambientLight intensity={0.8}/>
-                            <directionalLight position={[10, 10, 10]} intensity={0.2}/>
+                            <directionalLight position={[10, 10, 10]} intensity={0.1}/>
+
+                            {/*<OrbitControls enableZoom={false} enablePan={true} enableRotate={true} enableDamping={true}></OrbitControls>*/}
                         </Canvas>
 
                         <div>
+
                             <p className="grid-headtext"></p>
-                            <p className="grid-subtext">
+                            <p className="grid-subtext ">
                                 Welcome to Another Boring Idea—where creativity defies convention.
                                 We are not just a digital agency; we are a vibrant collective of digital artists,
                                 web designers, and branding specialists
@@ -49,121 +113,58 @@ const About = () => {
                 </div>
 
                 <div className="col-span-1 xl:row-span-3">
-                    <div className="grid-container">
-
-                        <Canvas>
-                            <HeroCamera isMobile={isMobile} >
-
-                            <HackerRoom
-                                scale={0.4}
-                                rotation={[0.1, -Math.PI, 0]}
-                                position={[0, -30, 0.4]}/>
-                            </HeroCamera>
-                            <ambientLight
-                                intensity={1}/>
-                            <directionalLight
-                                position={[10, 10, 10]}
-                                intensity={0.4}
-                            />
-                            {!isMobile && (
-                                <OrbitControls
-                                    enableZoom={false}
-                                    enablePan={true}
-                                    enableRotate={true}
-                                    enableDamping={true}
-                                />
-                            )}
-
-                        </Canvas>
-
-
+                    <div className="grid-container flex justify-center">
                         <div>
                             <p className="grid-headtext">Our Services</p>
-                            <p className="grid-subtext">
-                                I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable
-                                applications
-                            </p>
                         </div>
+                        <img src="./images/fontbrand.png" alt="Eva"
+                             className=" object-contain w-full h-full "/>
+                        <img src="./images/coloresmarca.png" alt="Eva"
+                             className=" object-contain w-full h-full "/>
+
                     </div>
                 </div>
 
                 <div className="col-span-1 xl:row-span-4">
                     <div className="grid-container">
-                        <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-                            <Globe
-                                height={326}
-                                width={326}
-                                backgroundColor="rgba(0, 0, 0, 0)"
-                                backgroundImageOpacity={0.5}
-                                showAtmosphere
-                                showGraticules
-                                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
-                            />
-                        </div>
-                        <div>
-                            <p className="grid-headtext">We are flexible with time zone communications & locations</p>
-                            <p className="grid-subtext">Open to remote work worldwide.</p>
-                            <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+                        <p className="grid-headtext">Branding</p>
+
+                        <div className="rounded-3xl w-full sm:h-[326px] h-[700px]  justify-center ">
+                            <img src="./images/molos2.png" alt="Eva" className="w-full h-full rounded-3xl mb-10"/>
+                            <img src="./images/molos3.png" alt="Eva" className="w-full h-full rounded-3xl mb-10"/>
+
+
+
                         </div>
                     </div>
                 </div>
 
                 <div className="xl:col-span-2 xl:row-span-3">
-                    <div className="grid-container">
-
-                        <Canvas >
-                            <HeroCamera scale={4}>
-                                <ambientLight intensity={0.6
-                                    } color={ "yellow"}/>
-                                <directionalLight
-                                    position={[10, 10, 10]}
-                                    castShadow
-                                    intensity={1}
-
-                                />
-                                <mesh position={[0, 1, 0]} scale={[10, 10, 10]}>
-                                    <sphereGeometry args={[2, 32, 32]}/>
-                                    <meshStandardMaterial attach="material" color="red" emissive="#800080" emissiveIntensity={0.8}/>
-                                </mesh>
-
-                                <mesh scale={[8, 8, 8]}>
-                                    <planeGeometry args={[10, 10]}/>
-                                    <meshBasicMaterial attach="material" color="blue"/>
-                                </mesh>
-                            </HeroCamera>
-                            {/*<OrbitControls enableZoom={false} enablePan={true} enableRotate={true} enableDamping={true}></OrbitControls>*/}
-                        </Canvas>
+                <div className="grid-container">
 
                         <div>
-                            <p className="grid-headtext">My Passion for Coding</p>
-                            <p className="grid-subtext">
-                                I love solving problems and building things through code. Programming isn&apos;t just my
-                                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
-                            </p>
+                            <p className="grid-headtext">UI-UX</p>
+                            <img src="./images/Boston.png" alt="Eva" className="w-full  rounded-3xl p-10"/>
+                            <img src="./images/espinroofing.png" alt="Eva" className="w-full  rounded-3xl"/>
+
+
                         </div>
                     </div>
                 </div>
-
-                <div className="xl:col-span-1 xl:row-span-2">
-                    <div className="grid-container">
-                        <div className="flex justify-center items-center">
-                            <RotatingBadge/>
+                <div className="col-span-1 xl:row-span-3">
+                    <div className="grid-container flex justify-center">
+                        <div>
+                            <p className="grid-headtext">Our Services</p>
                         </div>
-
-                        <div className="space-y-2">
-                            <p className="grid-subtext text-center">Contact me</p>
-                            <div className="copy-container" onClick={handleCopy}>
-                                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy"/>
-                                <p className="lg:text-1.5xl md:text-xl font-medium text-gray_gradient text-black">hello@anotherboringidea.com</p>
-                            </div>
-                        </div>
+                        <img src="./images/qori1.jpg" alt="Eva" className="w-full h-full rounded-3xl"/>
                     </div>
                 </div>
+
             </div>
-        </section>
+
+        </div>
+
     );
-};
+}
 
 export default About;

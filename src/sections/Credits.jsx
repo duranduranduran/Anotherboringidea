@@ -10,9 +10,9 @@ const Credits = () => {
     return (
 
 
-            <div className="max-w-screen-md mx-auto p-4 md:p-6 lg:p-8 text-black mt-20">
-                <Canvas className="w-full h-full">
-                    <Suspense fallback={<CanvasLoader/>}>
+        <div className="max-w-screen-xl mx-auto p-4 md:p-6 lg:p-8 text-black mt-20">
+            <Canvas className="w-full h-full">
+                <Suspense fallback={<CanvasLoader/>}>
                         <PerspectiveCamera makeDefault={true} position={[0, 0, 20]}/>
                         <HeroCamera>
 
@@ -41,6 +41,8 @@ const Credits = () => {
 
                     </Suspense>
                 </Canvas>
+
+
                 <div className="text-justify mb-12 mt-20">
                     <p className="text-lg leading-relaxed mb-4">Welcome to Another Boring Idea—where creativity
                         defies convention. We are not just a digital agency; we are a vibrant collective of digital

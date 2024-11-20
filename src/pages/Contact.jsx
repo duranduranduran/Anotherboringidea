@@ -8,7 +8,7 @@ const Contact = () => {
         <main className=" max-w-7xl mx-auto">
             <Navbar/>
             <ContactForm  />
-            <RotatingBadge/>
+
             <Footer/>
 
         </main>)
