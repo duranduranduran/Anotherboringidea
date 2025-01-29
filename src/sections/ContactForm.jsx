@@ -49,15 +49,17 @@ const ContactForm = () => {
                         className="h-64 py-2 pl-2 text-sm text-black bg-transparent border-b-black border-b-2 focus:outline-none focus:border-gray-500 w-full mb-6 md:mb-8 lg:mb-10"
                         placeholder="Message"
                     />
-                    <button
-                        type="submit"
-                        className="py-2 px-4 text-sm text-white bg-black focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent w-full mt-4"
-                    >
-                        Send Message
-                    </button>
+                    <a className="relative mx-auto mt-4 text-sm" href="#">
+                        <span className="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-black"></span>
+                        <span
+                            className="fold-bold relative inline-block h-full w-full rounded border-2 border-black
+        bg-white px-2 py-1 text-base font-bold text-black transition duration-100 hover:text-white hover:bg-black">
+        Send Message
+    </span>
+                    </a>
                 </form>
             </div>
-            <RotatingBadge />
+            <RotatingBadge/>
         </section>
     );
 };

@@ -36,7 +36,6 @@ const Credits = () => {
                         <directionalLight position={[10, 10, 10]} intensity={0.2}/>
 
 
-                        <OrbitControls enableZoom={false} enablePan={true} enableRotate={true} enableDamping={true}/>
 
 
                     </Suspense>
@@ -58,30 +57,27 @@ const Credits = () => {
 
                 </div>
 
-    <div><h1 className="text-2xl font-bold mb-4">Credits</h1></div>
+    <div><h1 className="text-2xl font-bold mb-4">Staff</h1></div>
 
                 <div className="credits-lists flex flex-col space-y-4">
                     <div className="credits-list">
-                        <h5 className="text-sm font-bold uppercase mb-2">Cast</h5>
+                        <h5 className="text-sm font-bold uppercase mb-2">Digital Marketing</h5>
                         <ul className="list-none mb-0">
-                            <li className="text-sm leading-tight mb-1">John Doe</li>
-                            <li className="text-sm leading-tight mb-1">Jane Doe</li>
-                            <li className="text-sm leading-tight mb-1">Bob Smith</li>
+                            <li className="text-sm leading-tight mb-1">Manuel Gallardo</li>
+
                         </ul>
                     </div>
                     <div className="credits-list">
-                        <h5 className="text-sm font-bold uppercase mb-2">Crew</h5>
+                        <h5 className="text-sm font-bold uppercase mb-2">Branding</h5>
                         <ul className="list-none mb-0">
-                            <li className="text-sm leading-tight mb-1">Front-end Development: Jaime Andres Navarrete</li>
-                            <li className="text-sm leading-tight mb-1">Producer: John Doe</li>
-                            <li className="text-sm leading-tight mb-1">Cinematographer: Bob Johnson</li>
+                            <li className="text-sm leading-tight mb-1">Arturo Xavier Navarrete F.</li>
+
                         </ul>
                     </div>
                     <div className="credits-list">
-                        <h5 className="text-sm font-bold uppercase mb-2">Music</h5>
+                        <h5 className="text-sm font-bold uppercase mb-2">Front-End Development and Web Design</h5>
                         <ul className="list-none mb-0">
-                            <li className="text-sm leading-tight mb-1">Composer: John Williams</li>
-                            <li className="text-sm leading-tight mb-1">Performer: The London Symphony Orchestra</li>
+                            <li className="text-sm leading-tight mb-1">Jaime Andres Navarrete F.</li>
                         </ul>
                     </div>
                     <div className="credits-list">
